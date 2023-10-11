@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Lateral Moderno</title>
+    <style>
+        :root {
+            --primary-bg: #27374D;
+            --secondary-bg: #526D82;
+            --text-color:#DDE6ED;
+            --text-hover-color: #000;
+            --font-size-lg: 18px;
+            --font-size-md: 16px;
+            --font-size-sm: 14px;
+            --border-radius: 8px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .contenedor {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+
+        }
+
+        .menu-lateral {
+            position: fixed;
+            background: var(--primary-bg);
+            width: 300px;
+            padding: 20px;
+            transition: width 0.3s ease;
+            position: relative;
+            top: 1px;
+            border-radius: 0px  5px 5px 0px;
+        }
+
+        .menu-lateral:hover {
+            width: 350px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-bottom: 15px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: var(--font-size-lg);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu li a:hover {
+            background-color: var(--secondary-bg);
+            color: var(--text-hover-color);
+        }
+
+        /* Iconos (puedes agregar tus propios iconos o usar una librería de iconos) */
+        .menu li a i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="menu-lateral">
+            <ul class="menu">
+                <li><a href="#"><i class="fas fa-list"></i> Lista</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Recordatorios</a></li>
+                <li><a href="#"><i class="fas fa-edit"></i> Editar etiquetas</a></li>
+                <li><a href="#"><i class="fas fa-trash"></i> Papelera</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

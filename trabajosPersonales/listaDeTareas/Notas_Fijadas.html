@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+             :root {
+            --primary-bg: #27374D;
+            --secondary-bg: #526D82;
+            --text-color: #DDE6ED;
+            --text-hover-color: #000;
+            --font-size-lg: 18px;
+            --font-size-md: 16px;
+            --font-size-sm: 14px;
+            --border-radius: 8px;
+        }
+
+        body{
+            margin: 0%;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        .fijado_contain{
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 420px;
+            display: flex;
+            box-shadow: 5px 5px 10px #000;
+            background-color: var(--secondary-bg);
+            border-radius: var(--border-radius);
+        }
+        .fijado_header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        
+        }
+        .fijado_titulo{
+            width: 70%;
+            height: 30px;
+            display: flex;
+           align-items: center;
+        }
+        .fijado_titulo p{
+            height: 28px;
+            padding: 0px;
+            font-size: var(--font-size-lg);
+            text-align: center;
+        }
+        .fecha{
+        margin: auto;
+        }
+        .fijado_note{
+            font-size: var(--font-size-md);
+            color: #000;
+            align-items: center;
+
+        }
+        .fijado_footer{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .trash{
+            display: flex;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .trash img{
+            width: 18px;
+            height: 18px;
+        }
+        .edit{
+            display: flex;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+        }
+        .edit img{
+            width: 18px;
+            height: 18px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="fijado_contain">
+        <div class="fijado_header">
+            <div class="fijado_titulo">
+                <p>TITULO</p>
+            </div>
+        <div class="fecha">
+            <p>9/5/23</p>
+        </div>
+        </div>
+        <div class="fijado_note">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                 blanditiis vitae animi, molestias quae nisi 
+                assumenda explicabo aliquam excepturi ea aliquid corporis.
+            </p>
+        </div>
+        <div class="footer">
+            <div class="trash">
+                <img src="./icons/eliminar.png" alt="">
+            </div>
+            <div class="edit">
+                <img src="./icons/boligrafo.png" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>

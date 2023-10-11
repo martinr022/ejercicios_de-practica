@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Ejemplo</title>
+  <style>
+    /* Estilos generales */
+    :root {
+            --primary-bg: #27374D;
+            --mostaza-bg: #FFAD01;
+            --gris-bg:#708090 ;
+            --LightPink-bg:#fffffcd5 ;
+            --celeste-bg:#0098f0 ;
+            --verdeBosque-bg:#228B22;
+            --AzulMarino-bg:#000080 ;
+            --text-color: #DDE6ED;
+            --text-hover-color: #000;
+            --font-size-lg: 18px;
+            --font-size-md: 16px;
+            --font-size-sm: 14px;
+            --border-radius: 8px;
+        }
+
+body {
+    display: flex;
+    background: var(--mostaza-bg);
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.inactive{
+    display: none;
+}
+
+/* Estilos del Navbar */
+.navbar {
+    background-color:var(--celeste-bg);
+    height: 45.74px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0px 0px 14px #000;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 90%;
+    position: fixed;
+}
+.menu-ham-btn img{
+  width: 46px;
+  height: 42px;
+  margin-left: 16px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+.logo-contain{
+
+
+}
+.logo-contain img{
+    width: 40px;
+    height: 40px;
+}
+.main_cont{
+    display: flex;
+   flex-direction: column;
+    justify-content: center;
+}
+.crear_secc{
+       display: flex;
+       align-content: center;
+       justify-content: center;
+        
+
+}
+.fijados_main{
+        display: block
+
+}
+.fijados_list{
+    display: grid;
+        grid-template-columns: repeat(auto-fill, 340px);
+        gap: 26px;
+        place-content: center;
+        margin-top: 26px;
+        margin-bottom: 26px;
+}
+
+
+        .fijado_contain{
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 300px;
+            display: flex;
+            box-shadow: 5px 5px 10px #000;
+            background-color: var(--mostaza-bg);
+            border-radius: var(--border-radius);
+        }
+        .fijado_header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        
+        }
+        .fijado_titulo{
+            width: 70%;
+            height: 30px;
+            display: flex;
+           align-items: center;
+        }
+        .fijado_titulo p{
+            height: 28px;
+            padding: 0px;
+            font-size: var(--font-size-lg);
+            text-align: center;
+        }
+        .fecha{
+        margin: auto;
+        }
+        .fijado_note{
+            font-size: var(--font-size-md);
+            color: #000;
+            align-items: center;
+
+        }
+        .fijado_footer{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .trash{
+            display: flex;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .trash img{
+            width: 18px;
+            height: 18px;
+        }
+        .edit{
+            display: flex;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+        }
+        .edit img{
+            width: 18px;
+            height: 18px;
+        }
+ /*CREAR NOTA*/
+ .crear-container {
+            background-color:var(--gris-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 24px;
+            width: 420px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .crear{
+            width: 400px;
+
+        }
+        .settings{
+            display: flex;
+            flex-direction: row;
+            gap: 270px;
+            padding: 0;
+        }
+        .nota-settings {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nota-settings li {
+            background-color: var(--secondary-bg);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .nota-settings li img{
+            width: 18px;
+            height: 18px;
+        }
+
+        .nota-settings li:hover {
+            background-color: var(--primary-bg);
+            transform: scale(1.1);
+
+        }
+
+        .title{
+            text-align: center;
+        }
+        .title textarea{
+            display: inline-block;
+            background-color: var(--secondary-bg);
+            border:none;/* Elimina el borde */
+            outline: none; /* Elimina el borde de enfoque */
+            width: 100%;
+            resize: vertical;
+        }
+        .title textarea::placeholder{
+            color: #000;
+            font-size: var(--font-size-lg);
+        }
+
+        /* Estilo para el contenido de la nota */
+        .nota-cont {
+            text-align: center;
+        }
+        .nota-cont textarea{
+            display: inline-block;
+            background-color: var(--bordo-bg);
+            border:none;/* Elimina el borde */
+            outline: none; /* Elimina el borde de enfoque */
+            width: 100%;
+            resize: vertical;
+            min-height: 100px;
+            font-size: var(--font-size-md);
+        
+        }
+        .nota-cont textarea::placeholder {
+            color:black; 
+       }
+        .guardar{
+            
+           
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            cursor: pointer;
+            gap: 10px;
+         
+
+        }
+        .guardar img:hover{
+            width: 22px;
+            height: 22px;
+            
+           
+          
+        }
+        .guardar img{
+            width: 18px;
+            height: 18px;
+            
+        }
+/*ASIDE MENU*/
+
+
+        .menu-lateral {
+            position: fixed;
+            top: 24px;
+            background: var(--primary-bg);
+            width: 300px;
+            height: 100vh;
+            padding: 20px;
+            transition: width 0.3s ease;
+            top: 45.74px;
+            border-radius: 0px  5px 5px 0px;
+            box-shadow: 8px 5px 25px #000;
+        }
+
+        .menu-lateral:hover {
+            width: 350px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-bottom: 15px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: var(--font-size-lg);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu li a:hover {
+            background-color: var(--secondary-bg);
+            color: var(--text-hover-color);
+        }
+
+        /* Iconos (puedes agregar tus propios iconos o usar una librería de iconos) */
+        .menu li a i {
+            margin-right: 10px;
+        }        
+
+
+/*CREDITOS*/
+.creditos{
+    width:100%;
+    height: 120px;
+    display: block;
+    background: #555;
+    position: relative;
+    bottom: 0%;
+}
+.creditos a{
+    font-size: 10px;
+}
+  </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-ham-btn">
+            <img src="./icons/hamburguesa.png"" alt="menu ham" srcset="">
+        </div>
+            <div class="logo-contain">
+            <img src="/icons/logo.png" alt="logo" srcset="">
+          
+         </div>
+    </nav>
+
+    
+
+        <div class="menu-lateral inactive">
+            <ul class="menu">
+                <li><a href="#"><i class="fas fa-list"></i> Lista</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Recordatorios</a></li>
+                <li><a href="#"><i class="fas fa-edit"></i> Editar etiquetas</a></li>
+                <li><a href="#"><i class="fas fa-trash"></i> Papelera</a></li>
+            </ul>
+        </div>
+
+
+
+
+    <header class="header_cont">
+    
+    </header>
+
+    <main class="main_cont">
+        <main class="crear_secc">
+        <div class="crear-container">
+
+            <div class="crear"> 
+                <div class="title">
+                    <textarea placeholder="TITULO"></textarea>
+                </div>
+                <div class="nota-cont">
+                    
+                    <textarea placeholder="Escribe tu nota..."></textarea>
+                </div>
+    <div class="settings">
+                <ul class="nota-settings">
+                    <li class="recorder"><img src="./icons/notificacion.png" ></li>
+                    <li class="background-options"><img src="./icons/pincel.png"></li>
+                    <li class="archive"><img src="./icons/bandeja-de-entrada.png"></li>
+                </ul>
+            <div class="guardar"><img src="./icons/guardar-instagram.png" ></div>
+    </div>
+            </div>
+           
+        </div>
+
+        <aside>
+
+        </aside>
+        
+    </main>
+        <main class="fijados_main">
+      <div class="fijados_list">
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        <div class="fijado_contain">
+            <div class="fijado_header">
+                <div class="fijado_titulo">
+                    <p>TITULO</p>
+                </div>
+            <div class="fecha">
+                <p>9/5/23</p>
+            </div>
+            </div>
+            <div class="fijado_note">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Quibusdam aperiam voluptate sit dolorem fugiat optio accusantium laudantium,
+                     blanditiis vitae animi, molestias quae nisi 
+                    assumenda explicabo aliquam excepturi ea aliquid corporis.
+                </p>
+            </div>
+            <div class="fijado_footer">
+                <div class="trash">
+                    <img src="./icons/eliminar.png" alt="">
+                </div>
+                <div class="edit">
+                    <img src="./icons/boligrafo.png" alt="" srcset="">
+                </div>
+            </div>
+            </div>
+        
+
+
+
+    
+
+
+
+
+
+
+
+    </div>
+        </main>
+    </main>    
+
+    <footer class="creditos">
+        <a href="https://www.flaticon.es/iconos-gratis/notificacion" title="notificación iconos">Notificación iconos creados por alkhalifi design - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/cepillo" title="cepillo iconos">Cepillo iconos creados por Freepik - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/hamburguesa" title="hamburguesa iconos">Hamburguesa iconos creados por OwlDsgnr - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/bandeja-de-entrada" title="bandeja de entrada iconos">Bandeja de entrada iconos creados por Ilham Fitrotul Hayat - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/salvar" title="salvar iconos">Salvar iconos creados por Freepik - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/lapiz" title="lápiz iconos">Lápiz iconos creados por Icongeek26 - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/basura" title="basura iconos">Basura iconos creados por Freepik - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/archivos-y-carpetas" title="archivos y carpetas iconos">Archivos y carpetas iconos creados por Stockes Design - Flaticon</a>
+    </footer>
+    
+    <script src="/checkList.js"></script>
+</body>
+</html>

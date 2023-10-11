@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nota</title>
+    <style>
+        :root {
+            --primary-bg: #27374D;
+            --secondary-bg: #526D82;
+            --text-color: #DDE6ED;
+            --text-hover-color: #000;
+            --font-size-lg: 18px;
+            --font-size-md: 16px;
+            --font-size-sm: 14px;
+            --border-radius: 8px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+           
+        }
+
+        .crear-container {
+            background-color: var(--secondary-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 420px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .crear{
+            width: 400px;
+
+        }
+        .settings{
+            display: flex;
+            flex-direction: row;
+            gap: 270px;
+            padding: 0;
+        }
+        .nota-settings {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nota-settings li {
+            background-color: var(--secondary-bg);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .nota-settings li img{
+            width: 18px;
+            height: 18px;
+        }
+
+        .nota-settings li:hover {
+            background-color: var(--primary-bg);
+            transform: scale(1.1);
+
+        }
+
+        .title{
+            text-align: center;
+        }
+        .title textarea{
+            display: inline-block;
+            background-color: var(--secondary-bg);
+            border:none;/* Elimina el borde */
+            outline: none; /* Elimina el borde de enfoque */
+            width: 100%;
+            resize: vertical;
+        }
+        .title textarea::placeholder{
+            color: #000;
+            font-size: var(--font-size-lg);
+        }
+
+        /* Estilo para el contenido de la nota */
+        .nota-cont {
+            text-align: center;
+        }
+        .nota-cont textarea{
+            display: inline-block;
+            background-color: var(--secondary-bg);
+            border:none;/* Elimina el borde */
+            outline: none; /* Elimina el borde de enfoque */
+            width: 100%;
+            resize: vertical;
+            min-height: 100px;
+            font-size: var(--font-size-md);
+        
+        }
+        .nota-cont textarea::placeholder {
+            color:black; 
+       }
+        .guardar{
+            
+           
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            cursor: pointer;
+            gap: 10px;
+         
+
+        }
+        .guardar img:hover{
+            width: 22px;
+            height: 22px;
+            
+           
+          
+        }
+        .guardar img{
+            width: 18px;
+            height: 18px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="crear-container">
+
+        <div class="crear"> 
+            <div class="title">
+                <textarea placeholder="TITULO"></textarea>
+            </div>
+            <div class="nota-cont">
+                
+                <textarea placeholder="Escribe tu nota..."></textarea>
+            </div>
+<div class="settings">
+            <ul class="nota-settings">
+                <li class="recorder"><img src="./icons/notificacion.png" ></li>
+                <li class="background-options"><img src="./icons/pincel.png"></li>
+                <li class="archive"><img src="./icons/bandeja-de-entrada.png"></li>
+            </ul>
+        <div class="guardar"><img src="./icons/guardar-instagram.png" ></div>
+</div>
+        </div>
+       
+    </div>
+</body>
+</html>
